@@ -74,6 +74,8 @@ Fx.ElementSwap = new Class ({
 	},
 	
 	activate: function(index) {
+		if ($type(index) == 'string') index = this.slides.indexOf(this.slides.filter('[id='+index+']')[0]);
+		if ($type(index) != 'number') return;
 		// panel fx here..
 		if (this.firstRun) {
 			this.show(index);
