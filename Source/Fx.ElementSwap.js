@@ -17,7 +17,7 @@ requires:
     - Fx.MorphElement.Effects
 provides: [Fx.ElementSwap]
 license: MIT-style license
-version: 1.0
+version: 1.0.1
 ...
 */
 
