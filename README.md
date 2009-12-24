@@ -31,18 +31,17 @@ How to use
 
 ### Options
 - TransitionFx - (*object*) see [Fx.MorphElement][] for available options. Defaults to:
-
-	#JS
-	{
-		transition: 'linear',
-		duration: 'long',
-		onStart: function() {
-			this.element.setStyle('overflow', 'hidden');
-		},
-		onComplete: function() {
-			this.element.setStyle('overflow', 'auto');
+		#JS
+		{
+			transition: 'linear',
+			duration: 'long',
+			onStart: function() {
+				this.element.setStyle('overflow', 'hidden');
+			},
+			onComplete: function() {
+				this.element.setStyle('overflow', 'auto');
+			}
 		}
-	}
 
 - showFx - (*string*: defauts to 'slide:right') the fx to use when showing the slide.
 - hideFx - (*string*: defauts to 'slide:left') the fx to use when hiding the slide
