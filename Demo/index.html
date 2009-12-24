@@ -13,17 +13,18 @@
 	<script>
 
 		window.addEvent('domready', function() {
-			/*
+			
 			var elSwap = new Fx.ElementSwap('.div_swap',{
 				TransitionFx: {
-					duration: 2000,
+					duration: 1000,
 					transition: 'bounce:in:out'
 				},
 				startFx: 'slide:up',
 				endFx: 'fade',
-				wait:false
+				autoPlay: true
 			});
-			*/
+			
+			/*
 			var elSwap = $('swap').fxSwap({
 				TransitionFx: {
 					duration: 2000,
@@ -33,6 +34,7 @@
 				showFx: 'fade',
 				wait:false
 			});
+			*/
 			$('next').addEvent('click', function(e){
 				elSwap.next();
 			})
