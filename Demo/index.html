@@ -13,7 +13,26 @@
 	<script>
 
 		window.addEvent('domready', function() {
-			var elSwap = new Fx.ElementSwap('.div_swap');
+			/*
+			var elSwap = new Fx.ElementSwap('.div_swap',{
+				TransitionFx: {
+					duration: 2000,
+					transition: 'bounce:in:out'
+				},
+				startFx: 'slide:up',
+				endFx: 'fade',
+				wait:false
+			});
+			*/
+			var elSwap = $('swap').fxSwap({
+				TransitionFx: {
+					duration: 2000,
+					transition: 'bounce:in:out'
+				},
+				hideFx: 'slide:up',
+				showFx: 'fade',
+				wait:false
+			});
 			$('next').addEvent('click', function(e){
 				elSwap.next();
 			})
@@ -40,10 +59,10 @@
 		width:300px;
 		height:300px;
 		z-index:0;
-		display:none;
+		/*display:none;*/
 	}
 	
-	.active { display:block; z-index:9999}
+	.active { display:block; z-index:1}
 	
 	.elementSwap {
 		position:relative;
@@ -60,10 +79,11 @@
 <body>
 	<!-- content starts here -->
 	<h1>ElementSwapper Demo</h1>
-	
-	<div id="el1" class="div_swap"><p>DIV 1</p></div>
-	<div id="el2" class="div_swap"><p>DIV 2</p></div>
-	<div id="el3" class="div_swap"><p>DIV 3</p></div>
+	<div id="swap">
+		<div id="el1" class="div_swap"><p>DIV 1</p></div>
+		<div id="el2" class="div_swap"><p>DIV 2</p></div>
+		<div id="el3" class="div_swap"><p>DIV 3</p></div>
+	</div>
 	<div id="next">Next</div>
 </body>
 </html>

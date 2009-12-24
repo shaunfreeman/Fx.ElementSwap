@@ -4,13 +4,15 @@ name: Fx.ElementSwap.js
 description: Slide show interface for classes.
 authors: Shaun Freeman
 requires:
-    core/1.2.4
+    core/1.2.4:
     - Class
     - Class.Extras
     - Element
-    elementswap/1.0
+    - Fx.Morph
+    - Fx.Transitions
+    elementswap/1.0:
     - ElementSwap
-    fx_morphelement/1.0.2
+    fx_morphelement/1.0.2:
     - Fx.MorphElement
     - Fx.MorphElement.Effects
 provides: [Fx.ElementSwap]
@@ -34,8 +36,8 @@ Fx.ElementSwap = new Class ({
 				this.element.setStyle('overflow', 'auto');
 			}
 		},
-		startFx: 'slide:right',
-		endFx: 'slide:left',
+		showFx: 'slide:right',
+		hideFx: 'slide:left',
 		wait: true
 	},
 	
@@ -67,7 +69,7 @@ Fx.ElementSwap = new Class ({
 				width: document.id(this.options.panelWrap).getStyle('width'),
 				height: document.id(this.options.panelWrap).getStyle('height'),
 				FxTransition: this.options.TransitionFx,
-				hideOnInitialize: this.options.endFx
+				hideOnInitialize: this.options.hideFx
 			});
 		}, this);
 		return this;
@@ -80,13 +82,13 @@ Fx.ElementSwap = new Class ({
 			this.firstRun = false;
 		} else {
 			if (this.options.wait) {
-				this.getFx('startFx').chain(
+				this.getFx('hideFx').chain(
 					function() {
 						this.show(index);
 					}.bind(this)
 				);
 			} else {
-				this.getFx('startFx');
+				this.getFx('hideFx');
 				this.show(index);
 			}
 		}
@@ -94,7 +96,7 @@ Fx.ElementSwap = new Class ({
 	
 	show: function(index) {
 		this.parent(index);
-		this.getFx('endFx');
+		this.getFx('showFx');
 	},
 	
 	getFx: function(fx) {
@@ -117,4 +119,12 @@ Fx.ElementSwap = new Class ({
 		this.slides[this.now].store('fxEffect:flag', 'hide');
 	}
 	
+});
+
+Element.implement({
+
+	fxSwap: function(options) {
+		return new Fx.ElementSwap(this.getChildren(),options);
+	}
+
 });
