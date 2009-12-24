@@ -12,7 +12,7 @@ requires:
     - Fx.Transitions
     elementswap/1.0:
     - ElementSwap
-    fx_morphelement/1.0.2:
+    fx_morphelement/1.0.3:
     - Fx.MorphElement
     - Fx.MorphElement.Effects
 provides: [Fx.ElementSwap]
