@@ -4,8 +4,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+	<script src="http://github.com/vincentbluff/ElementSwap/raw/master/Source/ElementSwap.js"></script>
+	<script src="http://github.com/vincentbluff/Fx.MorphElement/raw/master/Source/Fx.MorphElement.js"></script>
 
 	<title>vincentbluff/Fx.ElementSwap @ GitHub</title>
+	
+	<script>
+		window.addEvent('domready', function() {
+			var elSwap = new Fx.ElementSwap('.div_swap',{
+				activateOnLoad: 'el3',
+				autoPlay: true
+			});
+		});
+	</script>
 	
 	<style type="text/css">
 		body {
@@ -29,6 +41,30 @@
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+	
+	#el1 {background-color:#f00;}
+	#el2 {background-color:#0f0;}
+	#el3 {background-color:#00f;}
+	
+	.div_swap {
+		position:absolute;
+		top:0px;
+		width:300px;
+		height:300px;
+		display:none;
+		z-index:0;
+	}
+	
+	.active { display:block; z-index:1}
+	
+	.elementSwap {
+		position:relative;
+		width:300px;
+		height:300px;
+		margin-left:auto;
+		margin-right:auto;
+		overflow:hidden;
+	}
 	</style>
 	
 </head>
@@ -49,8 +85,13 @@
       <span class="small">by <a href="http://github.com/vincentbluff">vincentbluff</a></span></h1>
 
     <div class="description">
-      
+      A MooTools class for a slide show using any dom element with Fx.MorphElemnt effects.
     </div>
+    
+    <h2>Demo</h2>
+	<div id="el1" class="div_swap"><p>DIV 1</p></div>
+	<div id="el2" class="div_swap"><p>DIV 2</p></div>
+	<div id="el3" class="div_swap"><p>DIV 3</p></div>
 
     <h2>Authors</h2>
 	<p>vincentbluff (shaun@shaunfreeman.co.uk)
