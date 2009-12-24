@@ -30,20 +30,7 @@ How to use
 2. options - (*object*, optional) An object with options. See [ElementSwap][] for options and below for extra options.
 
 ### Options
-- TransitionFx - (*object*) see [Fx.MorphElement][] for available options. Defaults to:
-
-	#JS
-	{
-		transition: 'linear',
-		duration: 'long',
-		onStart: function() {
-			this.element.setStyle('overflow', 'hidden');
-		},
-		onComplete: function() {
-			this.element.setStyle('overflow', 'auto');
-		}
-	}
-
+- TransitionFx - (*object* defaults to:{transition: 'linear',duration: 'long',onStart: function() {this.element.setStyle('overflow', 'hidden');},onComplete: function() {this.element.setStyle('overflow', 'auto');}}) see [Fx.MorphElement][] for available options.
 - showFx - (*string*: defauts to 'slide:right') the fx to use when showing the slide.
 - hideFx - (*string*: defauts to 'slide:left') the fx to use when hiding the slide
 - wait - (*boolean*: defauts to true) whether to wait to execute the endFx after the startFx or run them together.
