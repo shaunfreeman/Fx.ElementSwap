@@ -55,9 +55,7 @@ Fx.ElementSwap = new Class ({
 		
 		this.attachFx(this.slides);
 		
-		if($type(this.options.activateOnLoad) == 'number') {
-			this.activate(this.options.activateOnLoad);
-		}
+		if (this.options.activateOnLoad) this.activate(this.options.activateOnLoad);
 		
 		if (this.options.autoPlay) this.start();
 	},
