@@ -4,20 +4,14 @@ name: Fx.ElementSwap.js
 description: Slide show interface for classes.
 authors: Shaun Freeman
 requires:
-    core/1.2.4:
-    - Class
-    - Class.Extras
-    - Element
-    - Fx.Morph
-    - Fx.Transitions
-    elementswap/1.0:
-    - ElementSwap
     fx_morphelement/1.0.3:
     - Fx.MorphElement
     - Fx.MorphElement.Effects
+    elementswap/1.0.1:
+    - ElementSwap
 provides: [Fx.ElementSwap]
 license: MIT-style license
-version: 1.0.1
+version: 1.0.2
 ...
 */
 
@@ -55,7 +49,7 @@ Fx.ElementSwap = new Class ({
 		
 		this.attachFx(this.slides);
 		
-		if (this.options.activateOnLoad) this.activate(this.options.activateOnLoad);
+		this.activate(this.options.activateOnLoad);
 		
 		if (this.options.autoPlay) this.start();
 	},
