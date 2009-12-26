@@ -14,14 +14,15 @@
 
 		window.addEvent('domready', function() {
 			
-			var elSwap = new Fx.ElementSwap('.div_swap',{
+			var elSwap = new Fx.ElementSwap('#swap img',{
 				TransitionFx: {
 					duration: 1000,
-					transition: 'bounce:in:out'
+					transition: 'linear'
 				},
-				startFx: 'slide:up',
-				endFx: 'fade',
-				autoPlay: true
+				showFx: 'blind:down',
+				hideFx: 'blind:left',
+				autoPlay: true,
+				wait: false
 			});
 			
 			/*
@@ -46,34 +47,31 @@
 		margin: 0px;
 		padding: 0px;
 		border: 0px;
+		background-color:#000;
+		color: #fff;
 	}
 	h1 {
 		margin: 10px;
 	}
 	
-	#el1 {background-color:#f00;}
-	#el2 {background-color:#0f0;}
-	#el3 {background-color:#00f;}
-	
-	.div_swap {
+	.swap {
 		position:absolute;
 		top:0px;
-		width:300px;
-		height:300px;
+		width:185px;
+		height:78px;
 		z-index:0;
 		/*display:none;*/
 	}
 	
-	.active { display:block; z-index:1}
+	.active { display:block; z-index:1 }
 	
 	.elementSwap {
 		position:relative;
-		width:300px;
-		height:300px;
+		width:185px;
+		height:78px;
 		margin-left:auto;
 		margin-right:auto;
 		overflow:hidden;
-		border:10px solid #000;
 	}
 	
 	</style>
@@ -82,9 +80,11 @@
 	<!-- content starts here -->
 	<h1>ElementSwapper Demo</h1>
 	<div id="swap">
-		<div id="el1" class="div_swap"><p>DIV 1</p></div>
-		<div id="el2" class="div_swap"><p>DIV 2</p></div>
-		<div id="el3" class="div_swap"><p>DIV 3</p></div>
+		<img class="swap" src="images/img01.png" />
+		<img class="swap" src="images/img02.png" />
+		<img class="swap" src="images/img03.png" />
+		<img class="swap" src="images/img04.png" />
+		<img class="swap" src="images/img05.png" />
 	</div>
 	<div id="next">Next</div>
 </body>
