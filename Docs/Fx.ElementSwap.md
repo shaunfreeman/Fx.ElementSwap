@@ -1,7 +1,7 @@
 Fx.ElementSwap
 ==============
 
-Fx.ElementSwap is a Slide Show class that will swap between any element using Fx.MorphElement to create the slide show effects.
+Fx.ElementSwap is a Slide Show class that will swap between any element using [Fx.MorphElement][] to create the slide show effects.
 
 Inherits methods, properties, options and events from [ElementSwap][].
 
@@ -14,8 +14,8 @@ Requirements
 ------------
 
 * [MooTools Core 1.2.4](http://mootools.net/core): Class, Class.Extras, Element, Selectors, Fx.Morph, Fx.Transitions and their dependencies.
-* [ElementSwap][] and their dependencies
-* [Fx.MorphElement][] and their dependencies
+* [ElementSwap][] and its dependencies
+* [Fx.MorphElement][] and its dependencies
 
 How to use
 ----------
