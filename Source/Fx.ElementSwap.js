@@ -94,7 +94,7 @@ Fx.ElementSwap = new Class ({
 	},
 	
 	getFx: function(fx) {
-		this.effect = this.slides[this.now].retrieve('morphElement');
+		this.effect = this.slides[this.now].retrieve('morphElement') || false;
 		return this.effect.start(this.options[fx]);
 	},
 	
